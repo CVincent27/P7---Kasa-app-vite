@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBarre from "../Header/Header";
-import Banner from "../Banner/Banner";
+import Banner from '../Banner/Banner';
 import BannerHome from './banner-home.jpg'
 import Footer from "../Footer/Footer";
 import './Home.scss'
