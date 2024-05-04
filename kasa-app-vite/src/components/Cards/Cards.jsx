@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './Cards.scss';
 
 const Cards = ({ cardsData }) => {
-  const slicedData = cardsData.slice(0, 6);
 
   return (
+    // enlever sliced
     <div className="cardsGlobale">
       <div className="cardsDisplay">
         {slicedData.map((card) => (

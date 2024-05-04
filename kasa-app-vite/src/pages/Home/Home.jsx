@@ -18,14 +18,15 @@ export function Home() {
   return (
     <>
       <NavBarre />
-      <Banner>
+      <Banner img>
         <div className="banner-container">
           <img className="banner-container-img" src={BannerHome} alt='img acceuil' />
-          <p className="banner-container-txt">Chez vous, partout et ailleurs</p>
+          <h1 className="banner-container-txt">Chez vous, partout et ailleurs</h1>
         </div>
       </Banner>
       <Outlet />
 
+{/* voir hook */}
       <LogementsData onDataFetch={handleDataFetch} />
       
       <div className="cards-container">
