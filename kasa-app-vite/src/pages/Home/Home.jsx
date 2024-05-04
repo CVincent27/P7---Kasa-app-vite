@@ -1,18 +1,19 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import NavBarre from "../../components/Header/Header";
-import Banner from '../../components/Banner/Banner';
+import Banner from "../../components/Banner/Banner";
 import BannerHome from '../../assets/banner-home.jpg';
-import Cards from '../../components/Cards/Cards';
 import LogementsData from "../../components/LogementsData/LogementsData";
+import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 import './Home.scss'
 
 export function Home() {
-  const [cardsData, setCardsData] = useState([]);
-
+  // init un tableau vide
+  const [cardData, setCardData] = useState([]);
+  // recup données
   const handleDataFetch = (data) => {
-    setCardsData(data);
+    setCardData(data);
   };
 
   return (
@@ -26,12 +27,13 @@ export function Home() {
       </Banner>
       <Outlet />
 
-{/* voir hook */}
       <LogementsData onDataFetch={handleDataFetch} />
+
       
-      <div className="cards-container">
-        <Cards cardsData={cardsData} />
-      </div>
+        {cardData.map((card) => (
+          <Card key={card.id} cardData={card} />
+        ))}
+      
       <Footer />
     </>
   );
