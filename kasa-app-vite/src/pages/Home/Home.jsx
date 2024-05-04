@@ -29,11 +29,11 @@ export function Home() {
 
       <LogementsData onDataFetch={handleDataFetch} />
 
-      
+      <div className="cards-container">
         {cardData.map((card) => (
           <Card key={card.id} cardData={card} />
         ))}
-      
+      </div>
       <Footer />
     </>
   );

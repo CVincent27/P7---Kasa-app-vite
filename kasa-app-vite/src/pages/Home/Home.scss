@@ -1,3 +1,13 @@
 .container {
     font-family: "Montserrat";
 }
+
+.cards-container {
+    background-color: #F7F7F7;
+    border-radius: 25px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    gap: 20px;
+}
