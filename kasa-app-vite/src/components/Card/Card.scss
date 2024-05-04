@@ -1,12 +1,28 @@
-.card-container {
-    display: flex;
-
 .card {
     display: flex;
-    width: 20%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
 
-    .locationNom {
-        
+    .card-wrap {
+        position: relative;
+
+        .locationNom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            padding: 30px;
+            color: #FFFFFF;
+        }
+
+        .locationCover {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
     }
-}
 }
