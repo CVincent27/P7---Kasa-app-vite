@@ -14,8 +14,6 @@ const LogementsData = ({ onDataFetch }) => {
 
     fetchData();
   }, [onDataFetch]);
-
-  return;
 };
 
 export default LogementsData;
