@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const LogementsData = ({ onDataFetch }) => {
+const LogementData = ({ onDataFetch }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -16,4 +16,4 @@ const LogementsData = ({ onDataFetch }) => {
   }, [onDataFetch]);
 };
 
-export default LogementsData;
+export default LogementData;
