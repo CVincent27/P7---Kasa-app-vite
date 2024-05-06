@@ -7,7 +7,9 @@ const Card = ({ cardData }) => {
     <Link className="card" to={`logements/${cardData.id}`}>
       <div className='card-wrap'>
         <h4 className='locationNom'>{cardData.title}</h4>
-        <img className='locationCover' src={cardData.cover} alt={cardData.title} />
+        <div className="image-container">
+          <img className='locationCover' src={cardData.cover} alt={cardData.title} />
+        </div>
       </div>
     </Link>
   );
