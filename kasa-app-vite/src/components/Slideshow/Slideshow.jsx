@@ -49,7 +49,7 @@ const Slideshow = ({ images }) => {
     );
 };
 
-// Vzlidation props
+// Validation props type
 Slideshow.propTypes = {
     images: PropTypes.arrayOf(PropTypes.string).isRequired 
 };

@@ -1,36 +1,36 @@
 .carousel {
-    /* Ajoutez ici les styles de la section principale du diaporama */
-  }
-  
-  .carousel-content {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    height: 400px;
-    position: relative;
-    align-items: center;
-    
-  }
-  
-  .carousel_arrow {
-    position: absolute;
+  height: 400px;
+}
 
-  }
-  
-  .carousel_arrow_left {
-    left: 10px;
-  }
-  
-  .carousel_arrow_right {
-    right: 10px;
-  }
-  
-  .slideCount {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 14px;
-  }
-  
+.carousel-content {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: 400px;
+  position: relative;
+  align-items: center;
+  border-radius: 25px;
+
+}
+
+.carousel_arrow {
+  position: absolute;
+
+}
+
+.carousel_arrow_left {
+  left: 10px;
+}
+
+.carousel_arrow_right {
+  right: 10px;
+}
+
+.slideCount {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+}
