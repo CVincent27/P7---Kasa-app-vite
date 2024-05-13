@@ -4,6 +4,7 @@ import LogementData from '../../components/LogementData/LogementData';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Slideshow from '../../components/Slideshow/Slideshow';
+import './Logements.scss';
 
 const Logements = () => {
     // extraire id de l'URL
@@ -24,14 +25,19 @@ const Logements = () => {
                 <LogementData onDataFetch={handleDataFetch} />
                 {logement && (
                     <div key={logement.id}>
-                        <h2>{logement.title}</h2>
-                        <p>{logement.description}</p>
-                        <p>
-                            {logement.host.name}
-                            <img src={logement.host.picture} alt={logement.host.name} />
+                        <p className='content-logement'>
+                            <div className='logement-infos'>
+                            <h2 className='logement-title'>{logement.title}</h2>
+                            <p className='logement-location'>{logement.location}</p>
+                            </div>
+                            <p className='logement-host'>
+                                <p className='logement-host-info'>{logement.host.name}</p>
+                                <img src={logement.host.picture} className='logement-host-img' alt={logement.host.name} />
+                            </p>
+                            
                         </p>
-                        <p>{logement.rating}</p>
-                        <p>{logement.location}</p>
+                        
+                        
                     </div>
                 )}
             </div>
