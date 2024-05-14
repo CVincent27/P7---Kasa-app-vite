@@ -15,7 +15,7 @@ function Collapse({title, content}) {
 
     // def classe selon si c'est open ou close
     const collapseContent = (contentVisible ? "visible" : "hidden") + " collapse"
-    const collapseChevron = (contentVisible ? arrowUp : arrowDown)
+    const collapseArrow = (contentVisible ? arrowUp : arrowDown)
 
     return (
         <div className='collapse'>
@@ -23,7 +23,7 @@ function Collapse({title, content}) {
             <div className='collapse__header' onClick={displayContent}>
                 <span>{title}</span>
                 <div className="chevronValue">
-                    <img src={collapseChevron} alt=""/>
+                    <img src={collapseArrow} alt=""/>
                 </div>
             </div>
 
