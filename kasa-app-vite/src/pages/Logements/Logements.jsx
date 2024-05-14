@@ -5,13 +5,14 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Slideshow from '../../components/Slideshow/Slideshow';
 import Tag from '../../components/Tag/Tag';
-import './Logements.scss';
+import Collapse from '../../components/Collapse/Collapse';
+
 import fullStar from '../../assets/full-star.png';
 import emptyStar from '../../assets/empty-star.png';
+import './Logements.scss';
 
 
 const arrayStars = [1, 2, 3, 4, 5]
-
 const Logements = () => {
     // extraire id de l'URL
     const { id } = useParams();
@@ -49,24 +50,27 @@ const Logements = () => {
                             </div>
 
                             <div className='stars'>
-                                {arrayStars.map(element => {
+                                {arrayStars.map(number => {
                                     const countStar = parseInt(logement.rating);
                                     return (
                                         <img
-                                            key={`star-${element}`}
-                                            src={element <= countStar ? fullStar : emptyStar}
-                                            alt={element <= countStar ? "full star" : "empty star"}
+                                            key={`star-${number}`}
+                                            src={number <= countStar ? fullStar : emptyStar}
+                                            alt={number <= countStar ? "full star" : "empty star"}
                                             className="star-img"
                                         />
                                     );
                                 })}
                             </div>
                         </div>
-
-
-
+                        <div className='collapseLogement'>
+                            <Collapse title="Description" content={logement.description} />
+                            <Collapse title="Equipements" content={logement.equipments} />
+                        </div>
                     </div>
+
                 )}
+
             </div>
             <Footer />
         </div>
