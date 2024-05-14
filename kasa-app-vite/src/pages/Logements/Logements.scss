@@ -28,10 +28,10 @@
         margin: 0;
         display: flex;
         align-items: center;
-        gap: 10px;
         color: #FF6060;
         font-size: 18px;
         font-weight: 500;
+        justify-content: flex-end;
 
         .logement-host-info {
             margin: 0;
@@ -44,7 +44,24 @@
         }
     }
 }
-.logement-tags {
+
+.display-tags-stars {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+
+    .logement-tags {
+        display: flex;
+        gap: 10px;
+    }
+
+    .stars {
+        display: flex;
+        font-size: 30px;
+        gap: 10px;
+
+        .star-img {
+            width: 24px;
+            height: 24px;
+        }
+    }
 }

@@ -6,6 +6,11 @@ import Footer from '../../components/Footer/Footer';
 import Slideshow from '../../components/Slideshow/Slideshow';
 import Tag from '../../components/Tag/Tag';
 import './Logements.scss';
+import fullStar from '../../assets/full-star.png';
+import emptyStar from '../../assets/empty-star.png';
+
+
+const arrayStars = [1, 2, 3, 4, 5]
 
 const Logements = () => {
     // extraire id de l'URL
@@ -26,21 +31,38 @@ const Logements = () => {
                 <LogementData onDataFetch={handleDataFetch} />
                 {logement && (
                     <div key={logement.id}>
-                        <p className='content-logement'>
+                        <div className='content-logement'>
                             <div className='logement-infos'>
                                 <h2 className='logement-title'>{logement.title}</h2>
                                 <p className='logement-location'>{logement.location}</p>
                             </div>
-                            <p className='logement-host'>
+                            <div className='logement-host'>
                                 <p className='logement-host-info'>{logement.host.name}</p>
                                 <img src={logement.host.picture} className='logement-host-img' alt={logement.host.name} />
-                            </p>
-                        </p>
-                        <div className='logement-tags'>
-                            {logement.tags.map(tag => (
-                                <Tag key={tag} tag={tag} />
-                            ))}
+                            </div>
                         </div>
+                        <div className='display-tags-stars'>
+                            <div className='logement-tags'>
+                                {logement.tags.map(tag => (
+                                    <Tag key={tag} tag={tag} />
+                                ))}
+                            </div>
+
+                            <div className='stars'>
+                                {arrayStars.map(element => {
+                                    const countStar = parseInt(logement.rating);
+                                    return (
+                                        <img
+                                            key={`star-${element}`}
+                                            src={element <= countStar ? fullStar : emptyStar}
+                                            alt={element <= countStar ? "full star" : "empty star"}
+                                            className="star-img"
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </div>
+
 
 
                     </div>
