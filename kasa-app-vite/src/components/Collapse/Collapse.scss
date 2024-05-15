@@ -1,41 +1,52 @@
+@import '../../sass/main.scss';
+
 .collapse {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    background-color: $color-tertiary;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
 
-    .collapse-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 28px;
-        background-color: #FF6060;
-        color: #FFFFFF;
-        font-size: 18px;
-        font-weight: 700;
-        padding: 10px 20px 10px 20px;
+    .collapse-title {
+        @include flex(row, space-between, center);
+        background-color: $color-secondary;
+        color: $color-primary;
         border-radius: 10px;
+        font-weight: 500;
+        padding: 10px 15px;
         cursor: pointer;
-    }
-    /* cache le contenu */
-    .hidden {
-        display: none;
-    }
-
-    .visible.collapse {
-        position: relative;
-        top: -15px;
-        font-size: 18px;
-        background-color: #f7f7f7;
         margin: 0;
-        border-radius: 10px;
-        z-index: -1;
 
-        ul {
-            padding: 36px 27px 19px 18px;
-            margin: 0;
-            text-align: justify;
-            list-style-type: none;
+        .arrow {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .arrow_up {
+            transform: rotate(0deg);
+        }
+
+        .arrow_down {
+            transform: rotate(180deg);
         }
     }
-}
 
+    &_content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        letter-spacing: 1px;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        padding: 10px;
+        color: $color-secondary;
+
+    }
+
+    &_content_hidden {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
+}
