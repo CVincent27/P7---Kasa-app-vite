@@ -1,4 +1,41 @@
 .collapse {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
-    
+    .collapse-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 28px;
+        background-color: #FF6060;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 10px 20px 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    /* cache le contenu */
+    .hidden {
+        display: none;
+    }
+
+    .visible.collapse {
+        position: relative;
+        top: -15px;
+        font-size: 18px;
+        background-color: #f7f7f7;
+        margin: 0;
+        border-radius: 10px;
+        z-index: -1;
+
+        ul {
+            padding: 36px 27px 19px 18px;
+            margin: 0;
+            text-align: justify;
+            list-style-type: none;
+        }
+    }
 }
+

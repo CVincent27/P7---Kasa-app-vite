@@ -20,9 +20,9 @@ function Collapse({title, content}) {
     return (
         <div className='collapse'>
 
-            <div className='collapse__header' onClick={displayContent}>
+            <div className='collapse-header' onClick={displayContent}>
                 <span>{title}</span>
-                <div className="chevronValue">
+                <div className="arrowValue">
                     <img src={collapseArrow} alt=""/>
                 </div>
             </div>
