@@ -68,7 +68,14 @@
 
 .collapseLogement {
     display: flex;
-    margin: 20px 0 50px;
+    justify-content: space-between;
     gap: 70px;
+    margin: 30px auto;
+    width: 95%;
+
+    .collapseItem {
+        width: 50%;
+    }
+
     
 }
