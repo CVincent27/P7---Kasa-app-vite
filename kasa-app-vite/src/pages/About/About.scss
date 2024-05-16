@@ -1,2 +1,10 @@
 @import '../../sass/main.scss';
 
+.collapse-container {
+    @include flex(column, center, center);
+    gap: 30px;
+
+    .collapse {
+        width: 100%;
+    }
+}
