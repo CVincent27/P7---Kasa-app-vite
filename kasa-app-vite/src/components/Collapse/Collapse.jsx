@@ -44,11 +44,11 @@
 // export default Collapse;
 
 import { useState } from 'react';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import './Collapse.scss';
 import arrow from '../../assets/arrow.png';
 
-export default function Collapse({title, content}) {
+export default function Collapse({ title, content }) {
 
     const [toggle, setToggle] = useState(false);
 
@@ -56,25 +56,25 @@ export default function Collapse({title, content}) {
         <div className='collapse'>
             <p className='collapse-title' onClick={() => setToggle(!toggle)}>
                 {title}
-                <img 
+                <img
                     className={toggle ? 'arrow arrow_up' : 'arrow arrow_down'}
-                    src={arrow} 
+                    src={arrow}
                     alt={title}
                 />
             </p>
-            <div className={toggle ? 'collapse_content' : 'collapse_content_hidden'}>
-                    {Array.isArray(content) ? content.map((item, index) => {
-                        return (
-                            <p key={index}>{item}</p>
-                        )
-                    }) : content
-                    }
-                </div> 
+            <div className={toggle ? 'collapse-content' : 'collapse-content-hidden'}>
+                {Array.isArray(content) ? content.map((item, index) => {
+                    return (
+                        <p key={index}>{item}</p>
+                    )
+                }) : content
+                }
             </div>
+        </div>
     )
-// Déf proptypes
+    // Déf proptypes
 }
 Collapse.propTypes = {
-    title: PropTypes.string.isRequired, 
+    title: PropTypes.string.isRequired,
     content: PropTypes.node.isRequired
 };

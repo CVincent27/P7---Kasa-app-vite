@@ -30,22 +30,18 @@
         }
     }
 
-    &_content {
+    .collapse-content {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        letter-spacing: 1px;
-        visibility: visible;
         opacity: 1;
-        height: auto;
         padding: 10px;
         color: $color-secondary;
 
     }
 
-    &_content_hidden {
+    .collapse-content-hidden {
         position: absolute;
-        visibility: hidden;
         opacity: 0;
         height: 0;
     }
