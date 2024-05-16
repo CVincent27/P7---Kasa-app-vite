@@ -1,11 +1,11 @@
+@import '../../sass/main.scss';
+
 .tag {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(row, center, center);
   width: 155px;
   height: 25px;
   background-color: red;
-  color: white;
+  color: $color-primary;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
