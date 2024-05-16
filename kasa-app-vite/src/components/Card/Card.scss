@@ -1,44 +1,43 @@
+@import '../../sass/main.scss';
+
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-  
-    .card-wrap {
-      position: relative;
+  text-align: center;
+  text-decoration: none;
+  @include flex(row, center, center);
+
+  .card-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .locationNom {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+      color: $color-primary;
       width: 100%;
-      height: 100%;
-  
-      .locationNom {
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 50px;
-        font-size: 18px;
-        font-weight: 700;
-        margin: 0;
-        color: #FFFFFF;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 350px;
+      
+      .locationCover {
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        align-items: center;
-        justify-content: center;
-      }
-  
-      .image-container {
-        width: 100%;
-        height: 350px; /* Ajuster la hauteur en conséquence */
-  
-        .locationCover {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 10px;
-        }
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
       }
     }
   }
-  
+}
