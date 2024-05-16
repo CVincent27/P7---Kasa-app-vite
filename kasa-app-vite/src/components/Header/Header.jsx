@@ -8,7 +8,7 @@ export default function Header() {
       <img src={logo} alt='logo de Kasa'></img>
       <ul  className='navLinks'>
         <Link className='navLink' to="/">Acceuil</Link>
-        <Link className='navLink' to="About">A propos</Link>
+        <Link className='navLink' to="/About">A propos</Link>
       </ul>
     </nav> 
   )
