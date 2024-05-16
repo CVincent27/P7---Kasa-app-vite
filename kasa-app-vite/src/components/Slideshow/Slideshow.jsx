@@ -7,7 +7,6 @@ import './Slideshow.scss';
 const Slideshow = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // voir pour modif (rassembler les 2 fonctions ?)
     const nextSlide = () => {
         if (currentIndex === images.length - 1) {
             setCurrentIndex(0); 
@@ -32,13 +31,13 @@ const Slideshow = ({ images }) => {
                         <img
                             className='carousel_arrow carousel_arrow_right'
                             src={ArrowRight}
-                            alt='show next slider'
+                            alt='flèche droite'
                             onClick={nextSlide}
                         />
                         <img
                             className='carousel_arrow carousel_arrow_left'
                             src={ArrowLeft}
-                            alt='show previous slider'
+                            alt='flèche gauche'
                             onClick={prevSlide}
                         />
                         <p className='slideCount'>{currentIndex + 1} / {images.length}</p>

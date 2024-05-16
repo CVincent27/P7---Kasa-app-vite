@@ -1,36 +1,36 @@
+@import '../../sass/main.scss';
+
 .carousel {
   height: 400px;
-}
 
-.carousel-content {
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  height: 400px;
-  position: relative;
-  align-items: center;
-  border-radius: 25px;
+  &-content {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 400px;
+    position: relative;
+    align-items: center;
+    border-radius: 25px;
+  }
 
-}
+  &_arrow {
+    position: absolute;
 
-.carousel_arrow {
-  position: absolute;
+    &_left {
+      left: 10px;
+    }
 
-}
+    &_right {
+      right: 10px;
+    }
+  }
 
-.carousel_arrow_left {
-  left: 10px;
-}
-
-.carousel_arrow_right {
-  right: 10px;
-}
-
-.slideCount {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 14px;
+  .slideCount {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-primary;
+    font-size: 14px;
+  }
 }
