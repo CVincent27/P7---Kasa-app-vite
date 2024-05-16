@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import LogementData from '../../components/LogementData/LogementData';
+
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Slideshow from '../../components/Slideshow/Slideshow';
@@ -18,20 +18,24 @@ const Logements = () => {
     const { id } = useParams();
     const [logement, setLogement] = useState(null);
 
-    //   recherche de données par id
-    const handleDataFetch = (data) => {
-        const selected = data.find(logement => logement.id === id);
-        setLogement(selected);
-    };
+    useEffect(() => {
+        async function getData() {
+            const response = await fetch("/logements.json");
+            const data = await response.json();
+            const selected = data.find(logement => logement.id === id);
+            setLogement(selected);
+        }
+        getData();
+    });
 
     return (
         <div>
             <div className='main-content'>
                 <Header />
-                <Slideshow images={logement ? logement.pictures : []} />
-                <LogementData onDataFetch={handleDataFetch} />
+
                 {logement && (
-                    <div key={logement.id}>
+                    <div>
+                        <Slideshow images={logement.pictures} />
                         <div className='content-logement'>
                             <div className='logement-infos'>
                                 <h2 className='logement-title'>{logement.title}</h2>
@@ -80,7 +84,6 @@ const Logements = () => {
                             </div>
                         </div>
                     </div>
-
                 )}
 
             </div>

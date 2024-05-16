@@ -6,9 +6,9 @@ const Card = ({ cardData }) => {
   return (
     <Link className="card" to={`logements/${cardData.id}`}>
       <div className='card-wrap'>
-        <h4 className='locationNom'>{cardData.title}</h4>
-        <div className="image-container">
           <img className='locationCover' src={cardData.cover} alt={cardData.title} />
+        <div className='card-layer'>
+          <p className='locationNom'>{cardData.title}</p>
         </div>
       </div>
     </Link>
