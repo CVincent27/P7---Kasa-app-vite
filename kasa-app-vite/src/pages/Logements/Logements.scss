@@ -1,8 +1,8 @@
+@import '../../sass/main.scss';
+
 .content-logement {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 20px 0 20px;
+    @include flex(row, space-between, center);
 
     .logement-infos {
         margin: 0;
@@ -14,7 +14,7 @@
             margin: 0;
             font-size: 36px;
             font-weight: 500;
-            color: #FF6060;
+            color: $color-secondary;
         }
 
         .logement-location {
@@ -26,12 +26,10 @@
 
     .logement-host {
         margin: 0;
-        display: flex;
-        align-items: center;
-        color: #FF6060;
+        color: $color-secondary;
         font-size: 18px;
         font-weight: 500;
-        justify-content: flex-end;
+        @include flex(row, flex-end, center);
 
         .logement-host-info {
             margin: 0;
@@ -77,5 +75,5 @@
         width: 50%;
     }
 
-    
+
 }

@@ -1,3 +1,5 @@
+@import '../../sass/main.scss';
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -5,18 +7,16 @@
 }
 
 .footer {
-    // position: absolute;
     width: 100%;
-    background-color: black;
+    background-color: $black;
     text-align: center;
     height: 200px;
-    @include flex-center;
+    @include flex(row, center, center);
 
 
     .footer_content {
-        @include flex-center;
+        @include flex(column, center, center);
         flex-wrap: wrap;
-        flex-direction: column;
 
         .footer_logo {
             display: flex;
@@ -25,7 +25,7 @@
 
         }
         .footer_text {
-            color: #FFFFFF;
+            color: $color-primary;
             font-size: 24px;
             font-weight: 500;
         }
