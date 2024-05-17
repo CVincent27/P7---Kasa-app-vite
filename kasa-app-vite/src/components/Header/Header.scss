@@ -4,18 +4,36 @@
     padding: 40px 0px;
     @include flex(row, space-between, center);
 
+    .navBar-logo {
+        max-height: 68px;
+
+        @media screen and (max-width: 768px) {
+            max-height: 40px;
+
+        }
+    }
+
     .navLinks {
         list-style: none;
         display: flex;
         justify-content: flex-end;
         gap: 36px;
-        width: 100%;
+
+        @media screen and (max-width: 768px) {
+            gap: 25px;
+
+        }
 
         .navLink {
             text-decoration: none;
             color: $black;
             font-size: 24px;
             font-weight: 500;
+
+            @media screen and (max-width: 768px) {
+                font-size: 12px;
+    
+            }
         }
 
         .active {

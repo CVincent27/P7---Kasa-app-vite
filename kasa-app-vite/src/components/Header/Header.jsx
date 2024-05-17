@@ -5,7 +5,7 @@ import logo from '../../assets/KasaLogo.png'
 export default function Header() {
   return (
     <nav className='navBar'>
-      <img src={logo} alt='logo de Kasa'></img>
+      <img className='navBar-logo' src={logo} alt='logo de Kasa'></img>
       <ul className='navLinks'>
         <NavLink className={({ isActive }) =>
           'navLink ' + (isActive ? 'active' : '')
