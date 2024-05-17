@@ -10,13 +10,11 @@
     width: 100%;
     height: 100%;
 
-
     .locationCover {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
-
     }
   }
 
@@ -30,9 +28,8 @@
     border-radius: 10px;
     background: $bg-cards;
 
-
     .locationNom {
-      position : absolute;
+      position: absolute;
       bottom: 0;
       font-size: 18px;
       font-weight: 700;
@@ -40,6 +37,30 @@
       color: $color-primary;
       padding: 0 0 5px 5px;
     }
+  }
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 10px; 
+
+    .card-wrap {
+      height: auto; 
+
+      .locationCover {
+        border-radius: 5px; 
+      }
+    }
+
+    .card-layer {
+      flex-direction: column; 
+      justify-content: flex-end; 
+      padding: 10px; 
+
+      .locationNom {
+        font-size: 16px; 
+        padding: 0 0 5px 0; 
+      }
+    }
   }
 }
