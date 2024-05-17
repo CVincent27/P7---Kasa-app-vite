@@ -1,8 +1,16 @@
 @import '../../sass/main.scss';
 
 .main-content {
-  margin: 0 60px;
+  margin: auto;
   max-width: 1440px;
+
+  @media screen and (max-width: 1440px) {
+    margin: 20px 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 10px 20px;
+  }
 
   .cards-container {
     background-color: $color-tertiary;
@@ -12,5 +20,12 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     gap: 40px;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding: 30px;
+      gap: 20px;
+    }
   }
 }
