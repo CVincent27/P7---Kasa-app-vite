@@ -9,7 +9,7 @@ export default function Header() {
       <ul className='navLinks'>
         <NavLink className={({ isActive }) =>
           'navLink ' + (isActive ? 'active' : '')
-        } to="/">Acceuil</NavLink>
+        } to="/">Accueil</NavLink>
         <NavLink className={({ isActive }) =>
           'navLink ' + (isActive ? 'active' : '')
         } to="/About">A propos</NavLink>

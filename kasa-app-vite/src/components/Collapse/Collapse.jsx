@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Collapse.scss';
 import arrow from '../../assets/arrow.png';
 
-export default function Collapse({ title, content }) {
+export default function Collapse({ title, children }) {
     const [toggle, setToggle] = useState(false);
 
     const handleToggle = () => {
@@ -15,19 +15,13 @@ export default function Collapse({ title, content }) {
             <p className='collapse-title' onClick={handleToggle}>
                 {title}
                 <img
-                    className={toggle ? 'arrow arrow_up' : 'arrow arrow_down'}
+                    className={toggle ? 'arrow arrow_down' : 'arrow arrow_up'}
                     src={arrow}
                     alt={title}
                 />
             </p>
             <div className={toggle ? 'collapse-content' : 'collapse-content-hidden'}>
-                {Array.isArray(content) ? (
-                    content.map((item, index) => {
-                        return <p key={index}>{item}</p>;
-                    })
-                ) : (
-                    <p>{content}</p>
-                )}
+                {children}
             </div>
         </div>
     );
@@ -35,5 +29,5 @@ export default function Collapse({ title, content }) {
 
 Collapse.propTypes = {
     title: PropTypes.string.isRequired,
-    content: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };

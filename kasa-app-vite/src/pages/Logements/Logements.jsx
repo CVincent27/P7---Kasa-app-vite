@@ -72,18 +72,20 @@ const Logements = () => {
                         </section>
                         <div className='collapseLogement'>
                             <div className='collapseItem'>
-                                <Collapse
-                                    title="Description"
-                                    content={logement.description}
-                                    contentClassName={"description"}
-                                />
+                                <Collapse title="Description">
+                                    <p>{logement.description}</p>
+                                </Collapse>
                             </div>
                             <div className='collapseItem'>
-                                <Collapse
-                                    title="Equipements"
-                                    content={logement.equipments}
-                                    contentClassName={"equipments"}
-                                />
+                                <Collapse title="Equipements">
+                                    <ul>
+                                        {logement.equipments.map((item, index) => (
+                                            <li key={index}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </Collapse>
+
+
                             </div>
                         </div>
                     </div>
