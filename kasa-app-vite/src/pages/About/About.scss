@@ -3,8 +3,17 @@
 .collapse-container {
     @include flex(column, center, center);
     gap: 30px;
+    margin-bottom: 30px;
 
     .collapse {
-        width: 100%;
+        width: 80%;
+
+
+    }
+    @media screen and (max-width: 768px) {
+        .collapse {
+            width: 100%;
+        }
     }
 }
+
