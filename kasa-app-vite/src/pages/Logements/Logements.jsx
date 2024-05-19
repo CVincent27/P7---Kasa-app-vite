@@ -36,37 +36,40 @@ const Logements = () => {
                 {logement && (
                     <div>
                         <Slideshow images={logement.pictures} />
-                        <div className='content-logement'>
-                            <div className='logement-infos'>
-                                <h2 className='logement-title'>{logement.title}</h2>
-                                <p className='logement-location'>{logement.location}</p>
+                        <section className='hostInfo-container'>
+                            <div className='title-tags-container'>
+                                <div className='title-container'>
+                                    <h2>{logement.title}</h2>
+                                    <p>{logement.location}</p>
+                                </div>
+                                <div className='tags-container'>
+                                    {logement.tags.map(tag => (
+                                        <Tag key={tag} tag={tag} />
+                                    ))}
+                                </div>
                             </div>
-                            <div className='logement-host'>
-                                <p className='logement-host-info'>{logement.host.name}</p>
-                                <img src={logement.host.picture} className='logement-host-img' alt={logement.host.name} />
+                            <div className='rate-host-container'>
+                                <div className='host-details'>
+                                    <div className='host-name'>{logement.host.name}</div>
+                                    <div className='host-picture'>
+                                        <img src={logement.host.picture} alt={logement.host.name} />
+                                    </div>
+                                </div>
+                                <div className='rate-container'>
+                                    {arrayStars.map(number => {
+                                        const countStar = parseInt(logement.rating);
+                                        return (
+                                            <img
+                                                key={`star-${number}`}
+                                                src={number <= countStar ? fullStar : emptyStar}
+                                                alt={number <= countStar ? "full star" : "empty star"}
+                                                className="star-img"
+                                            />
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        <div className='display-tags-stars'>
-                            <div className='logement-tags'>
-                                {logement.tags.map(tag => (
-                                    <Tag key={tag} tag={tag} />
-                                ))}
-                            </div>
-
-                            <div className='stars'>
-                                {arrayStars.map(number => {
-                                    const countStar = parseInt(logement.rating);
-                                    return (
-                                        <img
-                                            key={`star-${number}`}
-                                            src={number <= countStar ? fullStar : emptyStar}
-                                            alt={number <= countStar ? "full star" : "empty star"}
-                                            className="star-img"
-                                        />
-                                    );
-                                })}
-                            </div>
-                        </div>
+                        </section>
                         <div className='collapseLogement'>
                             <div className='collapseItem'>
                                 <Collapse

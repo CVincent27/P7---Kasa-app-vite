@@ -1,79 +1,140 @@
 @import '../../sass/main.scss';
 
-.content-logement {
-    margin: 20px 0 20px;
-    @include flex(row, space-between, center);
+.hostInfo-container {
+    @include flex(row, space-between, stretch);
+    margin: 30px 0 30px;
 
-    .logement-infos {
-        margin: 0;
+
+    .title-tags-container {
+        .title-container {
+            h2 {
+                font-size: 36px;
+                color: $color-secondary;
+                margin: 0 0 10px;
+                font-size: 36px;
+                font-style: normal;
+                font-weight: 500;
+            }
+
+            p {
+                margin: 0;
+                ;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+            }
+
+        }
+
+        .tags-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+    }
+
+    .rate-host-container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        justify-content: space-between;
 
-        .logement-title {
-            margin: 0;
-            font-size: 36px;
-            font-weight: 500;
-            color: $color-secondary;
+        .host-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .host-name {
+                color: $color-secondary;
+            }
+
+            .host-picture {
+                display: flex;
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: #c4c4c4;
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+
         }
 
-        .logement-location {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 500;
-        }
-    }
-
-    .logement-host {
-        margin: 0;
-        color: $color-secondary;
-        font-size: 18px;
-        font-weight: 500;
-        @include flex(row, flex-end, center);
-
-        .logement-host-info {
-            margin: 0;
-            width: 50%;
+        .rate-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0 0;
+            gap: 8px;
         }
 
-        .logement-host-img {
-            width: 64px;
-            border-radius: 50%;
-        }
-    }
-}
-
-.display-tags-stars {
-    display: flex;
-    justify-content: space-between;
-
-    .logement-tags {
-        display: flex;
-        gap: 10px;
-    }
-
-    .stars {
-        display: flex;
-        font-size: 30px;
-        gap: 10px;
-
-        .star-img {
-            width: 24px;
-            height: 24px;
-        }
     }
 }
 
 .collapseLogement {
     display: flex;
     justify-content: space-between;
-    gap: 70px;
-    margin: 30px auto;
-    width: 95%;
+    gap: 76px;
+    margin: 30px 0;
 
     .collapseItem {
         width: 50%;
     }
+}
 
+@media screen and (max-width: 768px) {
+    .hostInfo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
+        .title-tags-container {
+            .title-container {
+                h2 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .rate-host-container {
+            flex-direction: row-reverse;
+            width: 100%;
+            margin-top: 10px;
+
+            .host-details {
+                flex-direction: row-reverse;
+
+                .host-name {
+                    font-size: 12px;
+                }
+
+                .host-picture {
+                    width: 32px;
+                    height: 32px;
+
+                }
+            }
+            .rate-container {
+                img {
+                    width: 15px;
+                }
+            }
+        }
+    }
+
+    .collapseLogement {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+        .collapseItem {
+            width: 100%;
+        }
+    }
 }
