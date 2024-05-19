@@ -2,12 +2,17 @@
 
 .tag {
   @include flex(row, center, center);
-  width: 155px;
-  height: 25px;
-  background-color: red;
+  background-color: $color-secondary;
   color: $color-primary;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
+  padding: 3px 15px 3px 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .tag {
+    font-size: 10px;
   }
-  
+
+}
