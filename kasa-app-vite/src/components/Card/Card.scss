@@ -30,36 +30,33 @@
 
     .locationNom {
       position: absolute;
-      bottom: 0;
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0;
-      color: $color-primary;
-      padding: 0 0 5px 5px;
+    bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    left: 10px;
+    color: #FFFFFF;
     }
   }
 
   @media screen and (max-width: 768px) {
-    flex-direction: column; 
-    align-items: flex-start; 
-    padding: 10px; 
+    flex-direction: column;
+    align-items: flex-start;
 
     .card-wrap {
-      height: auto; 
+      height: 255px;
 
       .locationCover {
-        border-radius: 5px; 
+        height: 255px;
       }
     }
 
     .card-layer {
-      flex-direction: column; 
-      justify-content: flex-end; 
-      padding: 10px; 
+      flex-direction: column;
+      justify-content: flex-end;
 
       .locationNom {
-        font-size: 16px; 
-        padding: 0 0 5px 0; 
+        padding: 0 0 5px 0;
       }
     }
   }
