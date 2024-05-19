@@ -13,7 +13,6 @@
     height: 200px;
     @include flex(row, center, center);
 
-
     .footer_content {
         @include flex(column, center, center);
         flex-wrap: wrap;
@@ -22,12 +21,27 @@
             display: flex;
             width: 122px;
             margin: 18px;
-
         }
+
         .footer_text {
             color: $color-primary;
             font-size: 24px;
             font-weight: 500;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 20px 0 43px;
+
+        .footer_content {
+            .footer_logo {
+                margin: 10px 0; 
+            }
+
+            .footer_text {
+                font-size: 12px; 
+                width: 60%;
+            }
         }
     }
 }
