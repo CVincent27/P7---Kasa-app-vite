@@ -1,8 +1,6 @@
 @import '../../sass/main.scss';
 
 .carousel {
-  height: 400px;
-
   &-content {
     background-size: cover;
     background-position: center;
@@ -32,5 +30,20 @@
     transform: translateX(-50%);
     color: $color-primary;
     font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .carousel-content {
+    height: 255px;
+  }
+
+  .carousel_arrow {
+    width: 6%;
+  }
+
+  .slideCount {
+    display: none;
   }
 }
