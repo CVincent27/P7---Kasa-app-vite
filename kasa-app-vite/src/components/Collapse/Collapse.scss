@@ -34,16 +34,18 @@
     .collapse-content {
         display: flex;
         flex-direction: column;
-        gap: 5px;
         opacity: 1;
-        padding: 10px;
-        color: $color-secondary;
+        margin: 10px;
 
+        p {
+            margin: 10px 5px
+        }
     }
 
-    .collapse-content-hidden {
-        position: absolute;
-        opacity: 0;
-        height: 0;
-    }
+}
+
+.collapse-content-hidden {
+    position: absolute;
+    opacity: 0;
+    height: 0;
 }
